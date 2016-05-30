@@ -4,6 +4,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+from taggit.managers import TaggableManager
 
 # Create your models here.
 
@@ -19,6 +20,8 @@ class Post(models.Model):
     '''
     Every post model to data base
     '''
+    tags = TaggableManager()# Tags of tiggit
+
     STATUS_CHOICES = (
         ("draft", "Draft"),
         ("published", "Published"),
